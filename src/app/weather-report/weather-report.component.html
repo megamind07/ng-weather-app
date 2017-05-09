@@ -1,0 +1,41 @@
+<h1 class="text-center">Weather App</h1>
+
+<div class="col-md-offset-4 col-md-4">
+  <div class="form-group">
+    <label for="" class="text-left">Enter city & press enter</label>
+    <input type="text" name="city" class="form-control" [(ngModel)]="city" (change)="get_weather()">
+  </div>
+
+  <table *ngIf="weather" class="table bordered striped hover">
+    <thead>
+      <tr>
+        <td colspan="2" class="text-center">Weather summary</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Humidity</td>
+        <td class="text-right">{{ weather?.main?.humidity }}%</td>
+      </tr>
+    <tbody>
+      <tr>
+        <td>Pressure</td>
+        <td class="text-right">{{ weather?.main?.pressure }} mb</td>
+      </tr>
+    <tbody>
+      <tr>
+        <td>Temp</td>
+        <td class="text-right">{{ weather?.main?.temp }} deg C</td>
+      </tr>
+    <tbody>
+      <tr>
+        <td>Maximum Temperature</td>
+        <td class="text-right">{{ weather?.main?.temp_max }} deg C</td>
+      </tr>
+      <tr>
+        <td>Minimum Temperature</td>
+        <td class="text-right">{{ weather?.main?.temp_min }} deg C</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
