@@ -8,7 +8,7 @@ import { WeatherReportService } from './weather-report.service';
 })
 export class WeatherReportComponent implements OnInit {
 
-  city: String = "";
+  city: String = '';
   weather: any;
 
   constructor(private weatherReportService: WeatherReportService) { }
@@ -17,8 +17,7 @@ export class WeatherReportComponent implements OnInit {
   }
 
   get_weather() {
-    this.weather = this.weatherReportService.getWeatherForCity(this.city).subscribe((response) =>
-    {
+    this.weather = this.weatherReportService.getWeatherForCity(this.city).subscribe((response) => {
       this.weather = response.list[0];
       console.log(this.weather);
     });
